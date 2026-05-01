@@ -6,14 +6,15 @@ use BackedEnum;
 use Closure;
 use Filament\Contracts\Plugin;
 use Filament\Panel;
+use Filament\Schemas\Components\Component;
 use Filament\Schemas\Components\Section;
 use Filament\Schemas\Components\Text;
 use Filament\Support\Concerns\EvaluatesClosures;
 use Filament\Support\Enums\Alignment;
-use Illuminate\Contracts\Support\Htmlable;
-use Illuminate\Support\HtmlString;
 use Filament\View\PanelsRenderHook;
+use Illuminate\Contracts\Support\Htmlable;
 use Illuminate\Support\Facades\Blade;
+use Illuminate\Support\HtmlString;
 use Slimani\CookieConsent\Http\Middleware\CheckCookieConsent;
 
 class CookieConsentPlugin implements Plugin
@@ -23,7 +24,7 @@ class CookieConsentPlugin implements Plugin
     protected bool|Closure $enabled = true;
 
     /**
-     * @var array<int, \Filament\Schemas\Components\Component> | Closure | null
+     * @var array<int, Component> | Closure | null
      */
     protected array|Closure|null $schema = null;
 
@@ -83,7 +84,7 @@ class CookieConsentPlugin implements Plugin
     }
 
     /**
-     * @param  array<int, \Filament\Schemas\Components\Component> | Closure | null  $schema
+     * @param  array<int, Component> | Closure | null  $schema
      */
     public function schema(array|Closure|null $schema): static
     {
@@ -93,7 +94,7 @@ class CookieConsentPlugin implements Plugin
     }
 
     /**
-     * @return array<int, \Filament\Schemas\Components\Component>
+     * @return array<int, Component>
      */
     public function getSchema(): array
     {
@@ -314,7 +315,7 @@ class CookieConsentPlugin implements Plugin
     }
 
     /**
-     * @return array<int, \Filament\Schemas\Components\Component>
+     * @return array<int, Component>
      */
     protected function getDefaultSchema(): array
     {

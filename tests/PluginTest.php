@@ -21,7 +21,7 @@ it('uses a minimal default schema and allows customization', function () {
         ->toHaveCount(1)
         ->and($plugin->getSchema()[0])
         ->toBeInstanceOf(Section::class);
-    
+
     expect($plugin->shouldShowAcceptedNotification())->toBeTrue()
         ->and($plugin->shouldShowRejectedNotification())->toBeTrue()
         ->and($plugin->areCookiesRequired())->toBeFalse();

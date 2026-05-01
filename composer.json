@@ -1,0 +1,59 @@
+{
+    "name": "slimani/filament-cookie-consent",
+    "description": "A cookie consent plugin for Filament panels.",
+    "keywords": [
+        "laravel",
+        "filament",
+        "cookie-consent"
+    ],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Mohamed Slimani",
+            "email": "mohamed@slimani.dev"
+        }
+    ],
+    "require": {
+        "php": "^8.3",
+        "filament/filament": "^4.0|^5.0",
+        "spatie/laravel-package-tools": "^1.16"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^9.0|^10.0|^11.0",
+        "pestphp/pest": "^3.0|^4.0",
+        "pestphp/pest-plugin-laravel": "^3.0|^4.0",
+        "pestphp/pest-plugin-livewire": "^3.0|^4.0",
+        "larastan/larastan": "^3.0",
+        "phpstan/extension-installer": "^1.4",
+        "phpstan/phpstan-deprecation-rules": "^2.0",
+        "phpstan/phpstan-phpunit": "^2.0"
+    },
+    "scripts": {
+        "analyze": "vendor/bin/phpstan analyse",
+        "test": "vendor/bin/pest"
+    },
+    "autoload": {
+        "psr-4": {
+            "Slimani\\CookieConsent\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Slimani\\CookieConsent\\Tests\\": "tests/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Slimani\\CookieConsent\\CookieConsentServiceProvider"
+            ]
+        }
+    },
+    "config": {
+        "sort-packages": true,
+        "allow-plugins": {
+            "pestphp/pest-plugin": true,
+            "phpstan/extension-installer": true
+        }
+    }
+}
